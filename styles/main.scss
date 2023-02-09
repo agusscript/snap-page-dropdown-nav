@@ -50,14 +50,14 @@ header {
         }
 
         svg {
-            margin-bottom: 0.1rem;
-            margin-left: 0.2rem;
+          margin-bottom: 0.1rem;
+          margin-left: 0.2rem;
         }
       }
     }
 
     a:hover {
-        color: $Almost-Black;
+      color: $Almost-Black;
     }
 
     .login {
@@ -77,21 +77,35 @@ header {
     }
 
     .reg-btn:hover {
-        cursor: pointer;
-        color: $Almost-Black;
-        border: 2px solid $Almost-Black;
+      cursor: pointer;
+      color: $Almost-Black;
+      border: 2px solid $Almost-Black;
     }
   }
 
   .menu-btn {
     display: none;
     border: none;
+    background: none;
+    z-index: 1;
     img {
       width: 40px;
     }
 
+    img:nth-child(2) {
+      height: 32px;
+    }
+
     .close-menu {
       display: none;
+    }
+
+    .occult {
+      display: none;
+    }
+    
+    .show {
+      display: block;
     }
   }
 }
@@ -194,39 +208,37 @@ main {
 }
 
 @media (max-width: 950px) {
-  main {
-    flex-direction: column-reverse;
-  }
-
   header {
-    justify-content: space-between;
     nav {
-      box-sizing: border-box;
-      padding: 4rem 2rem;
-      flex-direction: column;
-      background-color: antiquewhite;
-      position: fixed;
-      width: 68%;
-      height: 100vh;
-      top: 0;
-      right: 0;
-      align-items: start;
-      right: -100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      img {
+        margin-top: 0.4rem;
+        width: 100px;
+      }
 
       ul {
-        margin: 0;
-        align-items: start;
-        flex-direction: column;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 0 4rem;
+        flex: 1;
+
+        li {
+          font-size: 0.89rem;
+        }
       }
 
       .login {
-        margin: 0;
+        margin-right: 1rem;
       }
     }
+  }
 
-    .menu-btn {
-      display: block;
-    }
+  main {
+    flex-direction: column-reverse;
   }
 
   .text-container {
@@ -254,6 +266,62 @@ main {
       height: auto;
       display: block;
     }
+  }
+}
+
+@media (max-width: 800px) {
+  header {
+    justify-content: space-between;
+
+    nav {
+      box-sizing: border-box;
+      padding: 4rem 2rem;
+      flex-direction: column;
+      position: fixed;
+      background-color: $Almost-white;
+      width: 68%;
+      height: 100vh;
+      top: 0;
+      right: 0;
+      align-items: start;
+      right: -100%;
+      transition: all 0.5s;
+
+      ul {
+        margin: 0;
+        align-items: start;
+        flex-direction: column;
+
+        li {
+          font-size: 1rem;
+
+          svg {
+            margin-left: 0.7rem;
+          }
+        }
+      }
+
+      .login {
+        padding: 1rem;
+        margin: 0;
+        align-self: center;
+      }
+
+      button {
+        align-self: center;
+        margin-bottom: 10rem;
+        padding: 0.6rem 4rem;
+      }
+    }
+
+    .menu-btn {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  .nav-active {
+    right: 0;
   }
 }
 
