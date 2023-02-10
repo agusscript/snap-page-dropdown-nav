@@ -41,6 +41,7 @@ header {
       flex: 1;
 
       li {
+        position: relative;
         font-size: 0.98rem;
         list-style: none;
 
@@ -52,6 +53,66 @@ header {
         svg {
           margin-bottom: 0.1rem;
           margin-left: 0.2rem;
+        }
+
+        .icon-arrow-up {
+          display: none;
+          transition: all 0.4s;
+        }
+        .icon-arrow-up-second {
+          display: none;
+        }
+
+        .occult {
+          display: none;
+        }
+        
+        .show {
+          display: block;
+        }
+
+        .dropdown-menu {
+          box-sizing: border-box;
+          margin-top: 1rem;
+          position: absolute;
+          width: 168px;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 0.7rem;
+          background-color: white;
+          left: -146px;
+          padding: 1.3rem 1.5rem;
+          border-radius: 0.6rem;
+          color: $Medium-Gray;
+          box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s;
+          opacity: 0;
+
+          li:hover {
+            cursor: pointer;
+            color: $Almost-Black;
+          }
+
+          img {
+            position: relative;
+            top: 0.1rem;
+            margin-right: 0.6rem;
+            width: 17px;
+            height: 17px;
+          }
+        }
+
+        .second {
+          padding: 1.3rem;
+          width: 120px;
+          justify-content: space-around;
+          gap: 1.3rem;
+          left: -64px;
+        }
+
+        .dropdown-active {
+          opacity: 1;
         }
       }
     }
@@ -103,7 +164,7 @@ header {
     .occult {
       display: none;
     }
-    
+
     .show {
       display: block;
     }
@@ -221,13 +282,24 @@ main {
 
       ul {
         display: flex;
-        align-items: center;
         gap: 1rem;
         margin: 0 4rem;
         flex: 1;
 
         li {
           font-size: 0.89rem;
+
+          .dropdown-menu {
+            width: 146px;
+            left: -130px;
+            padding: 1.2rem;
+          }
+
+          .second {
+            padding: 1.2rem;
+            width: 108px;
+            left: -64px;
+          }
         }
       }
 
@@ -298,6 +370,31 @@ main {
           svg {
             margin-left: 0.7rem;
           }
+
+          .dropdown-menu {
+            display: none;
+          }
+
+          .dropdown-active {
+            opacity: 1;
+            position: static;
+            display: block;
+            line-height: 2rem;
+            margin: 0;
+            width: 200px;
+            background-color: $Almost-white;
+            box-shadow: none;
+            animation: smoth 0.5s;
+          }
+
+          @keyframes smoth {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
         }
       }
 
@@ -328,6 +425,18 @@ main {
 @media (max-width: 500px) {
   body {
     margin: 0.5rem 1rem 3rem;
+  }
+
+  header {
+    .menu-btn {
+      img {
+        width: 34px;
+      }
+  
+      img:nth-child(2) {
+        height: 24px;
+      }
+    }
   }
 
   .text-container {
