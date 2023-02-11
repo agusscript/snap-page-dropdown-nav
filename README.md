@@ -64,6 +64,7 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
+- Sass
 - Flexbox
 - Media queries and responsive design
 - JavaScript functions and DOM events
