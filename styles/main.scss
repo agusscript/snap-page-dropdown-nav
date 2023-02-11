@@ -16,6 +16,23 @@ body {
   background-color: $Almost-white;
 }
 
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  animation: smoth 0.5s;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -66,7 +83,7 @@ header {
         .occult {
           display: none;
         }
-        
+
         .show {
           display: block;
         }
@@ -432,8 +449,9 @@ main {
       img {
         width: 34px;
       }
-  
+
       img:nth-child(2) {
+        width: 30px;
         height: 24px;
       }
     }

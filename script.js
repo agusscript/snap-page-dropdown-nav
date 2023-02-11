@@ -7,6 +7,7 @@ menuButton.onclick = function () {
   navBar.classList.toggle("nav-active");
   openMenu.classList.toggle("occult");
   closeMenu.classList.toggle("show");
+  document.querySelector(".overlay").classList.toggle("show");
 };
 
 const featuresNav = document.querySelector(".features");
